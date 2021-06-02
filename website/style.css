@@ -1,0 +1,123 @@
+body{
+    background: #FFFFFF;
+    font-family: /*-apple-system,*/ BlinkMacSystemFont, sans-serif;
+}
+
+#app{width: 65%;
+    margin: 0 auto;
+    padding: 5%;
+    background: #002222;
+    color: #FFFFFF;
+    /*border:  solid thin #dddddd;*/
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0px 5px 20px #333;
+}
+
+.holder{
+
+}
+
+.entry{
+    background: #ddd;
+    color: #022;
+}
+
+#entryHolder{
+
+}
+
+#date{
+margin: 10px;
+}
+
+#temp{
+margin: 10px;
+}
+
+#content{
+margin: 10px;
+}
+
+.headline {
+    font-size: 2.3em;
+    margin: 0 0 30px 0;
+    text-transform: uppercase;
+    border: solid thick;
+    padding: 15px;
+    font-weight: bold;
+}
+.title{
+    padding: 15px;
+    font-weight: bold;
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label{
+    display:block;
+    font-size: 1.5em;
+}
+
+input{
+    display:block;
+    height: 10vh;
+    width: 25%;
+    background:#EEEEEE;
+    color: #001111;
+    font-size: 0.9em;
+    border: none;
+    margin: 10px auto;
+    border-radius: 10px;
+    padding: 10px;
+    font-size:  auto;
+    font: Arial;
+}
+
+button{display:  block;
+    margin: 10px auto;
+    width: 25%;
+    height: 7.5vh;
+    background: #033;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 5px 15px #000;
+    z-index: 1000;
+}
+button:active{
+    background: #fff;
+    color: #033
+}
+h1{
+    font-size: 36px;
+}
+
+textarea{display: block;
+    background:#EEEEEE;
+    color: #001111;
+    font-size: 0.9em;
+    border-radius: 10px;
+    width: 50%;
+    height: 15vh;
+    margin: 10px auto;
+    padding: 10px;font-size:  auto;
+    font: Arial;
+
+}
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/* Style for Placeholder Text*/
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: #777777;
+    font: Arial;
+
+} 
+
+/**{border: solid thin;}*/
