@@ -1,7 +1,7 @@
 /* Global Variables */
 const button = document.querySelector('button');
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?q='
-const apiKey = '&APPID=dc2400eb2b4e198d1857e8ee8bb41bcc'
+const apiKey = '&APPID=dc2400eb2b4e198d1857e8ee8bb41bcc&units=metric';//Celcius'
 let city = document.querySelector('#zip');
 let feeling = document.querySelector('#feelings');
 // Create a new date instance dynamically with JS
@@ -15,7 +15,7 @@ button.addEventListener('click',function(){
 		city.value= prompt('Please Enter a ZIP code');
 		// Functions Chain
 		getData().then(
-			gotData=>postData('/post',{feeling:feeling.value, date:newDate, city:city.value, temp:(gotData.main.temp-273)})
+			gotData=>postData('/post',{feeling:feeling.value, date:newDate, city:city.value, temp:(gotData.main.temp)})
 			.then(
 				updateUI()
 			)
@@ -24,7 +24,7 @@ button.addEventListener('click',function(){
 	// Functions Chain
 	else{
 		getData().then(
-			gotData=>postData('/post',{feeling:feeling.value, date:newDate, city:city.value, temp:(gotData.main.temp-273)})
+			gotData=>postData('/post',{feeling:feeling.value, date:newDate, city:city.value, temp:(gotData.main.temp)})
 			.then(
 				updateUI()
 			)
@@ -67,9 +67,9 @@ async function postData(url='',data={}){
 	const request = await fetch('/all');
 	try{
 		const allData = await request.json();
-		document.querySelector('#date').textContent = `Today's Date is: ${allData.date}`;
-		document.querySelector('#temp').textContent = `Today's Temprature in ${allData.city} is: ${allData.temp.toFixed(1)} deg. Celsius`;
-		document.querySelector('#content').textContent = `And your Feeling is: ${allData.feeling}`;
+		document.querySelector('#date').innerHTML = `Today's Date is: <span class="sp">${allData.date}</span>`;
+		document.querySelector('#temp').innerHTML = `Today's Temprature in <span class="sp">${allData.city}</span> is: <span class="sp">${allData.temp.toFixed(1)}</span> deg. Celsius`;
+		document.querySelector('#content').innerHTML = `And your Feeling is: <span class="sp">${allData.feeling}</span><br>`;
 	}
 	catch(error){
 		console.log('error' + error)

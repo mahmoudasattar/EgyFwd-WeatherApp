@@ -25,19 +25,19 @@ body{
 }
 
 #entryHolder{
-
+padding: 15px 0;
 }
 
 #date{
-margin: 10px;
+margin: 5px;
 }
 
 #temp{
-margin: 10px;
+margin: 5px;
 }
 
 #content{
-margin: 10px;
+margin: 5px;
 }
 
 .headline {
@@ -50,6 +50,11 @@ margin: 10px;
 }
 .title{
     padding: 15px;
+    font-weight: bold;
+}
+
+.sp{
+    color: #066;
     font-weight: bold;
 }
 
